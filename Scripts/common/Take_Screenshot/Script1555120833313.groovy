@@ -17,7 +17,7 @@ import groovy.time.TimeCategory
 // Set screenshot output directory
 def today = new Date()
 
-def screenshots_path = GlobalVariable.path+'\\screenshots\\'+pTestScenario+'\\'+pPageName+'.png'
+def screenshots_path = GlobalVariable.workdir+'\\screenshots\\'+pTestScenario+'\\'+pPageName+'.png'
 
 
 /**

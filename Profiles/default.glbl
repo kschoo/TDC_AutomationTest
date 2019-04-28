@@ -7,7 +7,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'C:\\Katalon_Studio\\TDC_AutomationTest'</initValue>
-      <name>path</name>
+      <name>workdir</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
