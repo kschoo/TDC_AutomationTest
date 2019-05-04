@@ -23,11 +23,12 @@ def uploadDummyDoc() {
     Runtime runtime = Runtime.getRuntime()
 
     //set your path of the file upload exe here
-	def exeFile = GlobalVariable.workdir+'\\Include\\scripts\\uploadFile\\uploadDummyDoc.exe'
+	def exeFile = GlobalVariable.workdir +'\\Include\\scripts\\uploadFile\\uploadDummyDoc.exe'
 	
 	//set your path of the file to be uploaded here
-	def testFile = GlobalVariable.workdir+'\\Include\\scripts\\uploadFile\\logo.png'
+	def testFile = GlobalVariable.workdir +'\\Include\\scripts\\uploadFile\\logo.png'
 
+	println('***************exe GlobalVariable.workdir:'+ GlobalVariable.workdir)
 	println('***************exe path:'+exeFile)
 	println('***************test path:'+testFile)
 	Process process = runtime.exec(exeFile+' '+testFile)

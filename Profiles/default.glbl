@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'C:\\Katalon_Studio\\TDC_AutomationTest'</initValue>
+      <initValue>'C:\\Users\\kschoo\\Downloads\\TDC_AutomationTest'</initValue>
       <name>workdir</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
