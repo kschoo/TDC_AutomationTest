@@ -197,24 +197,40 @@ WebUI.callTestCase(findTestCase('common/ACS_Emulator'), [:], FailureHandling.STO
 //Begin Apppoinment calender
 thisDay = findTestData('DataSource').getValue(9, 6)
 
-calenderDay = ('CALENDER/a_' + thisDay)
+calenderDay = ('OLS/CALENDER/a_' + thisDay)
 
-WebUI.waitForElementClickable(findTestObject(calenderDay), 10)
+for (def count : (0..2)){
+	
+	WebUI.selectOptionByIndex(findTestObject('OLS/CALENDER/select_Month'), count)
+	
+	if( WebUI.waitForElementClickable(findTestObject(calenderDay), 10) == true){
 
-
-
-// if date is not avilable, select next month
-if(WebUI.waitForElementClickable(findTestObject(calenderDay), 10) == false){
-	WebUI.selectOptionByIndex(findTestObject('OLS/CALENDER/select_Month'), 1)
+		WebUI.scrollToElement(findTestObject(calenderDay), 0)
+		
+		WebUI.mouseOver(findTestObject(calenderDay))
+		
+		WebUI.doubleClick(findTestObject(calenderDay))
+		
+		break
+	}
 }
 
-WebUI.waitForElementClickable(findTestObject(calenderDay),15 )
+/**
+WebUI.waitForElementClickable(findTestObject(calenderDay), 8)
+
+// if date is not avilable, select next month
+if (WebUI.waitForElementClickable(findTestObject(calenderDay), 8) == false) {
+    WebUI.selectOptionByIndex(findTestObject('OLS/CALENDER/select_Month'), 1)
+}
+
+WebUI.waitForElementClickable(findTestObject(calenderDay), 13)
 
 WebUI.scrollToElement(findTestObject(calenderDay), 0)
 
 WebUI.mouseOver(findTestObject(calenderDay))
 
 WebUI.doubleClick(findTestObject(calenderDay))
+**/
 
 WebUI.delay(10)
 

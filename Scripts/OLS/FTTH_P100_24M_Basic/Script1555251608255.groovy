@@ -192,8 +192,26 @@ WebUI.delay(10)
 //Begin Apppoinment calender
 thisDay = findTestData('DataSource').getValue(9, 1)
 
-calenderDay = ('CALENDER/a_' + thisDay)
+calenderDay = ('OLS/CALENDER/a_' + thisDay)
 
+
+for (def count : (0..2)){
+	
+	WebUI.selectOptionByIndex(findTestObject('OLS/CALENDER/select_Month'), count)
+	
+	if( WebUI.waitForElementClickable(findTestObject(calenderDay), 10) == true){
+
+		WebUI.scrollToElement(findTestObject(calenderDay), 0)
+		
+		WebUI.mouseOver(findTestObject(calenderDay))
+		
+		WebUI.doubleClick(findTestObject(calenderDay))
+		
+		break
+	}
+}
+
+/**
 WebUI.waitForElementClickable(findTestObject(calenderDay), 8)
 
 // if date is not avilable, select next month
@@ -208,6 +226,7 @@ WebUI.scrollToElement(findTestObject(calenderDay), 0)
 WebUI.mouseOver(findTestObject(calenderDay))
 
 WebUI.doubleClick(findTestObject(calenderDay))
+**/
 
 WebUI.delay(10)
 
